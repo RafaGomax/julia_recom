@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recomendações</title>
+</head>
+<body>
+    <h1>Recomendações para :filme_usuario</h1>
+    <ul>
+        @foreach filme, similaridade in filmes_recomendados
+            <li>@($filme) - Similaridade: @($similaridade)</li>
+        @end
+    </ul>
+</body>
+</html>
