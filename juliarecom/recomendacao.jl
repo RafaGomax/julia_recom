@@ -7,7 +7,7 @@ using DataFrames, Recommendation, Tables, TableOperations
 modelo = leitura()
 
 n_users, n_items = 5, 10
-events = [Event(1, 2, 1), Event(3, 2, 1), Event(2, 6, 4)]
+events = [Event(1, 3, 1), Event(3, 2, 1), Event(2, 6, 4)]
 data = DataAccessor(events, n_users, n_items)
 recommender = MostPopular(data)
 fit!(recommender)
@@ -16,10 +16,6 @@ recomendar=recommend(recommender, 4, 2, collect(1:n_items))
 
 function filtro_linhas(modelo::DataFrame)
     modelo = modelo |> TableOperations.filter(x->Tables.getcolumn(x, :id) == 2) |> Tables.columntable
-end
-
-function selecao_colunas(dfr::DataFrame, a::Int64)
-    filtro_coluna = dfr |> TableOperations.select(a) |> Tables.columntable
 end
 
 function selecao_colunas_def(dfr::DataFrame)
