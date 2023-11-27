@@ -13,7 +13,7 @@ end
 
 Genie.config.server_port = 8000
 route("/", home)
-route("/recomendar/:filme_usuario", recomendar)
+#route("/recomendar/:filme_usuario", recomendar)
 
 Genie.up()
 

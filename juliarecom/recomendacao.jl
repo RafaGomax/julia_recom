@@ -6,7 +6,6 @@ using DataFrames, Recommendation, Tables, TableOperations
 
 modelo = leitura()
 
-ctable = (A=[1, missing, 3], B=[1.0, 2.0, 3.0], C=["hey", "there", "sailor"])
 n_users, n_items = 5, 10
 events = [Event(1, 2, 1), Event(3, 2, 1), Event(2, 6, 4)]
 data = DataAccessor(events, n_users, n_items)
